@@ -14,21 +14,22 @@ public class WordFrequencyGame {
             return inputStr + " 1";
         } else {
             try {
-
                 List<Input> frequencies = countFrequencies(words);
-
                 frequencies.sort((word1, word2) -> word2.getWordCount() - word1.getWordCount());
-
-                StringJoiner joiner = new StringJoiner("\n");
-                for (Input w : frequencies) {
-                    String s = w.getValue() + " " + w.getWordCount();
-                    joiner.add(s);
-                }
-                return joiner.toString();
+                return comPoseOutput(frequencies);
             } catch (Exception e) {
                 return "Calculate Error";
             }
         }
+    }
+
+    private static String comPoseOutput(List<Input> frequencies) {
+        StringJoiner joiner = new StringJoiner("\n");
+        for (Input w : frequencies) {
+            String s = w.getValue() + " " + w.getWordCount();
+            joiner.add(s);
+        }
+        return joiner.toString();
     }
 
     private List<Input> countFrequencies(String[] words) {
