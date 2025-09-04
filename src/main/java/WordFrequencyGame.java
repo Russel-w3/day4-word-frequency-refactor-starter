@@ -26,7 +26,7 @@ public class WordFrequencyGame {
 
     private static String comPoseOutput(List<Input> frequencies) {
         return frequencies.stream()
-                .map(w -> w.getValue() + " " + w.getWordCount())
+                .map(word -> word.getValue() + " " + word.getWordCount())
                 .collect(Collectors.joining("\n"));
     }
 
