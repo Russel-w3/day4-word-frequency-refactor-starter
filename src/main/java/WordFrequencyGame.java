@@ -61,8 +61,7 @@ public class WordFrequencyGame {
                 map1.get(input1).add(input1);
             }
         }
-        Map<String, List<String>> map = map1;
-        return map;
+        return map1;
     }
 
 
