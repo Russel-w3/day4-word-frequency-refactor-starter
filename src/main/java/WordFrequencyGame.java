@@ -17,14 +17,14 @@ public class WordFrequencyGame {
             try {
                 List<Input> frequencies = countFrequencies(words);
                 frequencies.sort((word1, word2) -> word2.getWordCount() - word1.getWordCount());
-                return comPoseOutput(frequencies);
+                return composeOutput(frequencies);
             } catch (Exception e) {
                 return "Calculate Error";
             }
         }
     }
 
-    private static String comPoseOutput(List<Input> frequencies) {
+    private static String composeOutput(List<Input> frequencies) {
         return frequencies.stream()
                 .map(word -> word.getValue() + " " + word.getWordCount())
                 .collect(Collectors.joining("\n"));
